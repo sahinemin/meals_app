@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/widgets/category_item.dart';
-import '../models/category.dart';
+import '../widgets/category_item.dart';
+import '../dummy_data.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final MediaQueryData mediaQuery = MediaQuery.of(context);
+    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: const Text('DeliMeal'),
@@ -14,11 +14,11 @@ class CategoriesScreen extends StatelessWidget {
       body: GridView(
         padding: const EdgeInsets.all(20),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          mainAxisExtent: mediaQuery.size.width / 10,
-          maxCrossAxisExtent: mediaQuery.size.height / 3,
+          mainAxisExtent: size.width / 10,
+          maxCrossAxisExtent: size.height / 3,
           childAspectRatio: 1.5,
-          crossAxisSpacing: mediaQuery.size.width / 100,
-          mainAxisSpacing: mediaQuery.size.width / 100,
+          crossAxisSpacing: size.width / 100,
+          mainAxisSpacing: size.width / 100,
         ),
         children: <Widget>[
           ...dummyCategories

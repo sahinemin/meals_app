@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
             ),
       ),
       onGenerateRoute: RouteGenerator.generateRoute,
-      initialRoute: '/categories',
+      initialRoute: RouteGenerator.categoryPage,
     );
   }
 }
